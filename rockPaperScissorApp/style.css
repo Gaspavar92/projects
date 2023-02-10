@@ -37,6 +37,7 @@ form {
     margin: 0 20px;
     border-radius: 20px;
     margin-top: 80px;
+    cursor: pointer;
 }
 
 .rock:hover, .paper:hover, .scissor:hover {
