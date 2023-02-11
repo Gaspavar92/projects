@@ -57,6 +57,7 @@ const getComputerSelection = () => {
 
 rockButton.addEventListener("click", (event) => {
     event.preventDefault();
+    gameDiv.classList.remove("hide");
     gameDiv.innerHTML = "";
     playersDiv.innerHTML = "";
     scoresDiv.innerHTML = "";
@@ -96,6 +97,7 @@ rockButton.addEventListener("click", (event) => {
 
 paperButton.addEventListener("click", (event) => {
     event.preventDefault();
+    gameDiv.classList.remove("hide");
     gameDiv.innerHTML = "";
     playersDiv.innerHTML = "";
     scoresDiv.innerHTML = "";
@@ -135,6 +137,7 @@ paperButton.addEventListener("click", (event) => {
 
 scissorButton.addEventListener("click", (event) => {
     event.preventDefault();
+    gameDiv.classList.remove("hide");
     gameDiv.innerHTML = "";
     playersDiv.innerHTML = "";
     scoresDiv.innerHTML = "";
@@ -186,6 +189,9 @@ const endGame = () => {
         scoresDiv.append(userScoreMessageParagraph);
         computerScoreMessageParagraph.textContent = `The computer's score is ${computerScore}`;
         scoresDiv.append(computerScoreMessageParagraph);
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorButton.disabled = true;
         userScore = 0;
         computerScore = 0;
     } else if (computerScore === 5) {
@@ -199,13 +205,50 @@ const endGame = () => {
         scoresDiv.append(userScoreMessageParagraph);
         computerScoreMessageParagraph.textContent = `The computer's score is ${computerScore}`;
         scoresDiv.append(computerScoreMessageParagraph);
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorButton.disabled = true;
         userScore = 0;
         computerScore = 0;
     }
 }
 
+// Defining a function to start playing the game
+
+const startPlaying = () => {
+    gameDiv.classList.add("hide");
+    playButton.classList.add("hide");
+    form.classList.remove("hide")
+    replayButton.classList.remove("hide")
+}
+
+const playButton = document.querySelector(".play");
+const form = document.querySelector(".form");
+
+playButton.addEventListener("click", () => {
+    startPlaying();
+})
+
 // Defining a function to start the game again once the game is over
 
+
+const replayButton = document.querySelector(".replay");
+
 const restartGame = () => {
-    
+    playButton.classList.remove("hide");
+    gameDiv.classList.add("hide");
+    form.classList.add("hide");
+    replayButton.classList.add("hide");
+    tieMessageParagraph.classList.remove("hide")
+    winMessageParagraph.classList.remove("hide")
+    loseMessageParagraph.classList.remove("hide")
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorButton.disabled = false;
+    userScore = 0;
+    computerScore = 0;
 }
+
+replayButton.addEventListener("click", () => {
+    restartGame();
+})

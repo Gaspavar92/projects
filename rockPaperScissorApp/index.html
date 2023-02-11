@@ -15,13 +15,21 @@
     <header>
         <h1>Rock ~ Paper ~ Scissor</h1>
     </header>
-    <form action="#">
+    <form action="#" class="form hide">
         <input type="button" value="Rock" class="rock">
         <input type="button" value="Paper" class="paper">
         <input type="button" value="Scissor" class="scissor">
     </form>
 
-    <div class="game" id="game">
+    <div class="initial-screen">
+        <button class="play">Play Now</button>
+    </div>
+
+    <div class="game hide" id="game">
+    </div>
+
+    <div class="replay-div">
+        <button class="replay hide">Restart</button>
     </div>
 
     <script src="./script.js"></script>
