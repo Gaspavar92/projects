@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+* {
+    font-family: 'Permanent Marker', cursive;
+}
+
 body {
     background-image:
     linear-gradient(rgba(0, 22, 82, 0.909), rgba(0, 22, 82, 0.909)),
@@ -18,7 +22,6 @@ body {
 
 h1 {
     text-align: center;
-    font-family: 'Permanent Marker', cursive;
     color: white;
     font-size: 100px;
     margin: 0;
